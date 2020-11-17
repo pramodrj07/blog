@@ -21,7 +21,7 @@ plugins:
 authors:
     pramod:
       name:           pramod
-      site:           https://www.pramodjayathirth.io
+      site:           https://www.pramodjayathirth.dev
       avatar:         /assets/images/avatar1.jpg
       bio:            "I am a Software Engineer at vmware working on modern application and service mesh platforms. I am an active upstream contributor of Istio, envoy and Kubernetes. I had previously worked at Intel's cloud Division with focus on OpenStack, OpenDaylight and OpenvSwitch. Prior to that I was a Oracle Developer and Adminsitrator at Capgemini. The core area of my interest and Passion is in Networking, Distributed Systems and recently Artificial intelligence.
       There is not a moment I would design a software without thinking about resiliency, network unavailability and data accessibility.
