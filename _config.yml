@@ -24,7 +24,7 @@ authors:
     pramod:
       name:           pramod
       site:           https://pramodjayathirth.dev
-      avatar:         assets/images/avatar1.jpg
+      avatar:         assets/images/pramod.jpg
       bio:            "I am a Software Engineer at vmware working on modern application and service mesh platforms. I am an active upstream contributor of Istio, envoy and Kubernetes. I had previously worked at Intel's cloud Division with focus on OpenStack, OpenDaylight and OpenvSwitch. Prior to that I was a Oracle Developer and Adminsitrator at Capgemini. The core area of my interest and Passion is in Networking, Distributed Systems and recently Artificial intelligence.
       There is not a moment I would design a software without thinking about resiliency, network unavailability and data accessibility.
       I have a master's degree in Electrical Engineering from San Jose State University with area of interest in Software Defined Networking."
