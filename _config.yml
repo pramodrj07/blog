@@ -40,7 +40,7 @@ defaults:
     values:
       layout: post
       author: pramod
-      avatar: /assets/images/avatar1.jpg
+      avatar: /assets/images/welcome.jpg
       
   # all pages
   - scope:
