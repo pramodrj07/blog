@@ -1,0 +1,58 @@
+# Site
+name: 'Pramod Raghavendra Jayathirth'
+description: 'Welcome to my Blog!!'
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/favicon.ico'
+baseurl: '/mundana-theme-jekyll'
+disqus: 'blogwebsite'
+email: 'rj.jayathirth@gmail.com'
+
+include: ["_pages"]
+permalink: /:title/
+
+# Plugins
+plugins: 
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-seo-tag
+  
+authors:
+    pramod:
+      name:           pramod
+      site:           https://www.pramodjayathirth.io
+      avatar:         /assets/images/avatar1.jpg
+      bio:            "I am a Software Engineer at vmware working on modern application and service mesh platforms. I am an active upstream contributor of Istio, envoy and Kubernetes. I had previously worked at Intel's cloud Division with focus on OpenStack, OpenDaylight and OpenvSwitch. Prior to that I was a Oracle Developer and Adminsitrator at Capgemini. The core area of my interest and Passion is in Networking, Distributed Systems and recently Artificial intelligence.
+      There is not a moment I would design a software without thinking about resiliency, network unavailability and data accessibility.
+      I have a master's degree in Electrical Engineering from San Jose State University with area of interest in Software Defined Networking."
+      email:          rj.jayathirth@gmail.com
+      twitter:        https://www.instagram.com/ajna_transcendent
+ 
+# Defaults
+defaults:
+
+  # all posts
+  - scope:
+      path: "_posts"
+    values:
+      layout: post
+      author: pramod
+      avatar: /assets/images/avatar1.jpg
+      
+  # all pages
+  - scope:
+      path: "_pages"
+    values:
+      layout: page
+      
+# Syntax
+markdown: kramdown
+highlighter: rouge
+
+# Paginate
+paginate: 10
+
+
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
