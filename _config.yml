@@ -5,7 +5,8 @@ logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: ''
 url: 'http://pramodjayathirth.dev/'
-disqus: 'pramodraghavendrajayathirth'
+disqus:
+  shortname: 'pramodjayathirth-dev'
 email: 'rj.jayathirth@gmail.com'
 comments: true
 
