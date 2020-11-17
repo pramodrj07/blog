@@ -7,6 +7,7 @@ baseurl: ''
 url: 'http://pramodjayathirth.dev/'
 disqus: 'pramodraghavendrajayathirth'
 email: 'rj.jayathirth@gmail.com'
+comments: true
 
 include: ["_pages"]
 permalink: /:title/
