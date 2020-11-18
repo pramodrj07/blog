@@ -14,6 +14,6 @@ We will find that HSMs are deployed in all the corporate and Banking sectors whi
 
 My experience in integrating a Hardware Security Module(TPM) into the Cloud has led me to question and investigate the security aspect everytime I work on a new project. I would probably spend an entire day in discussion when a developer says that the secrets and keys are on test/development server. 
 
-Checkout my work here on [here][confluence-page]
+Checkout my work here on [Trusted Platform Module HSM][confluence-page]
 
 [confluence-page]: https://wiki.onap.org/display/DW/Integration+of+SoftHSM2+with+HW-Plugins
