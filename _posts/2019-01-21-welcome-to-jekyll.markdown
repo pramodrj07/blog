@@ -4,6 +4,7 @@ title:  "Welcome to my Blog"
 categories: [ tutorial ]
 image: assets/images/welcome.jpg
 author: pramod
+tags: [sticky]
 ---
 Welcome to my Blog. I will be sharing tech posts related to Cloud computing, AI and competent programming.
 
