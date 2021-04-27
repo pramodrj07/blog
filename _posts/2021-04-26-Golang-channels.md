@@ -7,7 +7,7 @@ image: assets/images/gochannels.jpg
 tags: featured
 ---
 
-The channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (<-)
+Channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (<-)
 
 Channels are associated with a data type which determines what it can transport. The channel cannot transport any other type of data. 
 
