@@ -6,26 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Software Defined Networking | Pramod Raghavendra Jayathirth</title>
 
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>Software Defined Networking | Pramod Raghavendra Jayathirth</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.1" />
 <meta property="og:title" content="Software Defined Networking" />
 <meta name="author" content="pramod" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Software Defined Networking" />
-<meta property="og:description" content="Software Defined Networking" />
-<link rel="canonical" href="http://localhost:4000/mundana-theme-jekyll/sdn/" />
-<meta property="og:url" content="http://localhost:4000/mundana-theme-jekyll/sdn/" />
+<meta name="description" content="Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale." />
+<meta property="og:description" content="Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale." />
+<link rel="canonical" href="http://localhost:4000/sdn/" />
+<meta property="og:url" content="http://localhost:4000/sdn/" />
 <meta property="og:site_name" content="Pramod Raghavendra Jayathirth" />
-<meta property="og:image" content="http://localhost:4000/mundana-theme-jekyll/assets/images/sdn.jpg" />
+<meta property="og:image" content="http://localhost:4000/assets/images/sdn.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-01-19T00:00:00-08:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/sdn.jpg" />
+<meta property="twitter:title" content="Software Defined Networking" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/mundana-theme-jekyll/assets/images/logo.png"},"name":"pramod"},"headline":"Software Defined Networking","dateModified":"2019-01-19T00:00:00-08:00","datePublished":"2019-01-19T00:00:00-08:00","image":"http://localhost:4000/mundana-theme-jekyll/assets/images/sdn.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/mundana-theme-jekyll/sdn/"},"author":{"@type":"Person","name":"pramod"},"description":"Software Defined Networking","url":"http://localhost:4000/mundana-theme-jekyll/sdn/","@context":"http://schema.org"}</script>
+{"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"pramod"},"@type":"BlogPosting","image":"http://localhost:4000/assets/images/sdn.jpg","headline":"Software Defined Networking","dateModified":"2019-01-19T00:00:00-08:00","datePublished":"2019-01-19T00:00:00-08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/sdn/"},"author":{"@type":"Person","name":"pramod"},"description":"Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale.","url":"http://localhost:4000/sdn/","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="shortcut icon" type="image/x-icon" href="/mundana-theme-jekyll/assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -34,10 +37,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700" rel="stylesheet">
 
     <!-- Bootstrap Modified -->
-    <link rel="stylesheet" href="/mundana-theme-jekyll/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
     <!-- Theme Stylesheet -->
-    <link rel="stylesheet" href="/mundana-theme-jekyll/assets/css/theme.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
 
     <!-- Jquery on header to make sure everything works, the rest  of the scripts in footer for fast loading -->
     <script
@@ -55,7 +58,7 @@
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="/mundana-theme-jekyll/index.html"><strong>Pramod Raghavendra Jayathirth</strong></a>
+        <a class="navbar-brand" href="/index.html"><strong>Pramod Raghavendra Jayathirth</strong></a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,18 +67,18 @@
                <!--  Replace menu links here -->
 
 <li class="nav-item">
-<a class="nav-link" href="/mundana-theme-jekyll/index.html">Home</a>
+<a class="nav-link" href="/index.html">Home</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="/mundana-theme-jekyll/authors-list.html">Authors</a>
+<a class="nav-link" href="/authors-list.html">Authors</a>
 </li>
 <li class="nav-item">
-<a class="nav-link" href="/mundana-theme-jekyll/contact.html">Contact</a>
+<a class="nav-link" href="/contact.html">Contact</a>
 </li>
 
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <script src="/mundana-theme-jekyll/assets/js/lunr.js"></script>
+                <script src="/assets/js/lunr.js"></script>
 
 <script>
 $(function() {
@@ -88,77 +91,82 @@ $(function() {
 
 var documents = [{
     "id": 0,
-    "url": "http://localhost:4000/mundana-theme-jekyll/404/",
+    "url": "http://localhost:4000/404/",
     "title": "",
     "body": " 404 Page not found :(  The requested page could not be found. "
     }, {
     "id": 1,
-    "url": "http://localhost:4000/mundana-theme-jekyll/about.html",
+    "url": "http://localhost:4000/about.html",
     "title": "About",
     "body": "Made with by Sal @wowthemesnet. "
     }, {
     "id": 2,
-    "url": "http://localhost:4000/mundana-theme-jekyll/author-pramod.html",
+    "url": "http://localhost:4000/author-pramod.html",
     "title": "Pramod",
     "body": "                        {{page. title}} Follow:         {{ site. authors. pramod. site }}         {{ site. authors. pramod. bio }}                                   Posts by {{page. title}}:       {% assign posts = site. posts | where: author , sal  %}      {% for post in posts %}      {% include main-loop-card. html %}      {% endfor %}  "
     }, {
     "id": 3,
-    "url": "http://localhost:4000/mundana-theme-jekyll/authors-list.html",
+    "url": "http://localhost:4000/authors-list.html",
     "title": "Authors",
     "body": "{{page. title}}:     {% for author in site. authors %}                                         {{ author[1]. name }} :       (View Posts)      {{ author[1]. bio }}                          &nbsp;       &nbsp;                                    {% endfor %}  "
     }, {
     "id": 4,
-    "url": "http://localhost:4000/mundana-theme-jekyll/categories.html",
+    "url": "http://localhost:4000/categories.html",
     "title": "Categories",
     "body": "          Categories          {% for category in site. categories %}     {{ category[0] }}:           {% assign pages_list = category[1] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}           {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}    {% endfor %}                  {% include sidebar-featured. html %}          "
     }, {
     "id": 5,
-    "url": "http://localhost:4000/mundana-theme-jekyll/contact.html",
+    "url": "http://localhost:4000/contact.html",
     "title": "Contact",
     "body": "  Please send your message to {{site. name}}. I will get back as soon as possible. You can drop me a mail at pramod. rj07@gmail. com too.   "
     }, {
     "id": 6,
-    "url": "http://localhost:4000/mundana-theme-jekyll/",
+    "url": "http://localhost:4000/",
     "title": "Pramod's Blog",
     "body": "  {% if page. url ==  /  %}      {% assign latest_post = site. posts[0] %}          &lt;div class= topfirstimage  style= background-image: url({% if latest_post. image contains  ://  %}{{ latest_post. image }}{% else %} {{site. baseurl}}/{{ latest_post. image}}{% endif %}); height: 200px;  background-size: cover;  background-repeat: no-repeat; &gt;&lt;/div&gt;           {{ latest_post. title }}  :       {{ latest_post. excerpt | strip_html | strip_newlines | truncate: 136 }}               In         {% for category in latest_post. categories %}        {{ category }},         {% endfor %}                                {{ latest_post. date | date: '%b %d, %Y' }}                            {%- assign second_post = site. posts[1] -%}                        {% if second_post. image %}                         &lt;img class= w-100  src= {% if second_post. image contains  ://  %}{{ second_post. image }}{% else %}{{ second_post. image | absolute_url }}{% endif %}  alt= {{ second_post. title }} &gt;                        {% endif %}                                    {{ second_post. title }}          :                       In             {% for category in second_post. categories %}            {{ category }},             {% endfor %}                                                      {{ second_post. date | date: '%b %d, %Y' }}                                    {%- assign third_post = site. posts[2] -%}                        {% if third_post. image %}                         &lt;img class= w-100  src= {% if third_post. image contains  ://  %}{{ third_post. image }}{% else %}{{site. baseurl}}/{{ third_post. image }}{% endif %}  alt= {{ third_post. title }} &gt;                        {% endif %}                                    {{ third_post. title }}          :                       In             {% for category in third_post. categories %}            {{ category }},             {% endfor %}                                                      {{ third_post. date | date: '%b %d, %Y' }}                                    {%- assign fourth_post = site. posts[3] -%}                        {% if fourth_post. image %}                        &lt;img class= w-100  src= {% if fourth_post. image contains  ://  %}{{ fourth_post. image }}{% else %}{{site. baseurl}}/{{ fourth_post. image }}{% endif %}  alt= {{ fourth_post. title }} &gt;                        {% endif %}                                    {{ fourth_post. title }}          :                       In             {% for category in fourth_post. categories %}            {{ category }},             {% endfor %}                                                      {{ fourth_post. date | date: '%b %d, %Y' }}                                  {% for post in site. posts %} {% if post. tags contains  sticky  %}                    {{post. title}}                  {{ post. excerpt | strip_html | strip_newlines | truncate: 136 }}                 Read More            	             {% endif %}{% endfor %}  {% endif %}                All Stories:         {% for post in paginator. posts %}          {% include main-loop-card. html %}        {% endfor %}                   {% if paginator. total_pages &gt; 1 %}              {% if paginator. previous_page %}        &laquo; Prev       {% else %}        &laquo;       {% endif %}       {% for page in (1. . paginator. total_pages) %}        {% if page == paginator. page %}        {{ page }}        {% elsif page == 1 %}        {{ page }}        {% else %}        {{ page }}        {% endif %}       {% endfor %}       {% if paginator. next_page %}        Next &raquo;       {% else %}        &raquo;       {% endif %}            {% endif %}                     {% include sidebar-featured. html %}      "
     }, {
     "id": 7,
-    "url": "http://localhost:4000/mundana-theme-jekyll/privacy-policy.html",
+    "url": "http://localhost:4000/privacy-policy.html",
     "title": "Privacy Policy",
     "body": "”{{site. name}}” takes your privacy seriously. To better protect your privacy we provide this privacy policy notice explaining the way your personal information is collected and used. Collection of Routine Information: This website track basic information about their visitors. This information includes, but is not limited to, IP addresses, browser details, timestamps and referring pages. None of this information can personally identify specific visitor to this website. The information is tracked for routine administration and maintenance purposes. Cookies: Where necessary, this website uses cookies to store information about a visitor’s preferences and history in order to better serve the visitor and/or present the visitor with customized content. Advertisement and Other Third Parties: Advertising partners and other third parties may use cookies, scripts and/or web beacons to track visitor activities on this website in order to display advertisements and other useful information. Such tracking is done directly by the third parties through their own servers and is subject to their own privacy policies. This website has no access or control over these cookies, scripts and/or web beacons that may be used by third parties. Learn how to opt out of Google’s cookie usage. Links to Third Party Websites: We have included links on this website for your use and reference. We are not responsible for the privacy policies on these websites. You should be aware that the privacy policies of these websites may differ from our own. Security: The security of your personal information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security. Changes To This Privacy Policy: This Privacy Policy is effective and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page. We reserve the right to update or change our Privacy Policy at any time and you should check this Privacy Policy periodically. If we make any material changes to this Privacy Policy, we will notify you either through the email address you have provided us, or by placing a prominent notice on our website. Contact Information: For any questions or concerns regarding the privacy policy, please contact us here. "
     }, {
     "id": 8,
-    "url": "http://localhost:4000/mundana-theme-jekyll/tags.html",
+    "url": "http://localhost:4000/tags.html",
     "title": "Tags",
     "body": "          Tags          {% for tag in site. tags %}     {{ tag[0] }}:           {% assign pages_list = tag[1] %}    {% for post in pages_list %}    {% if post. title != null %}     {% if group == null or group == post. group %}           {% include main-loop-card. html %}     {% endif %}    {% endif %}    {% endfor %}    {% assign pages_list = nil %}    {% assign group = nil %}    {% endfor %}                  {% include sidebar-featured. html %}          "
     }, {
     "id": 9,
-    "url": "http://localhost:4000/mundana-theme-jekyll/robots.txt",
+    "url": "http://localhost:4000/robots.txt",
     "title": "",
     "body": "      Sitemap: {{ “sitemap. xml”   absolute_url }}   "
     }, {
     "id": 10,
-    "url": "http://localhost:4000/mundana-theme-jekyll/Why-Service-Mesh/",
+    "url": "http://localhost:4000/Golang-channels/",
+    "title": "What are Go channels?",
+    "body": "2021/04/26 - The channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&lt;-) Channels are associated with a data type which determines what it can transport. The channel cannot transport any other type of data. A channel must be created before it is used ch := make(chan int)This channel sends and receives the block with the int data type till the other end is ready Sending and Receiving: Write into a channela &lt;- dataRead from a channeldata := &lt;- aThe transmitting operations such as sending and receiving to a channel are blocking by default. This means that when the data is sent into a channel the control is blocked till a goroutine reads from the other end of the channel. Similarly the read from the channel is blocked till the other end has a gorouting writing data into it Example code: Here is an example code which distributes a mathematical work between two go routines. We can see that the final result is calculated once both the goroutines have completed the calculation/computation package mainimport  fmt func add(s []int, ch chan int) {	add := 0	for _, v := range s {		add += v	}	ch &lt;- add // send add to c}func main() {	p := []int{4,0,8,5,-1,1,7}	d := make(chan int)	go add(p[:len(p)/2], d)	go add(p[len(p)/2:], d)	x, y := &lt;-d, &lt;-d // receive from c	fmt. Println(x, y, x+y)}"
+    }, {
+    "id": 11,
+    "url": "http://localhost:4000/Why-Service-Mesh/",
     "title": "Why would we need a service mesh?",
     "body": "2020/01/20 - Service Mesh is typically an infrastructure layer to secure, manage and connect your Microservices. Well. . Well. . Why would we even need an infra layer on top of an awesome infra layer? Like k8s. . Though kubernetes offers excellent way to deploy, manage and scale you applications and microservices, it still needs to be secured. Though one can imagine the security to be handled at the API gateway and external load balancer level, the need arises when the communication takes places between the microservices inside the cluster. How would a traffic be fine grained to a specific pod of a microservice for your sticky session?How would the mTLS be established between the micorservices running within your cluster?Is it possible to introduce your testing code to your existing running prod instances without an outage? All the above questions and more can be solved using a Servicemesh. Kubernetes is aimed to ease the job of a application developer. Wouldn’t a developer want to offload the Security, Traffic and network responsibility to someone else? "
     }, {
-    "id": 11,
-    "url": "http://localhost:4000/mundana-theme-jekyll/welcome-to-jekyll/",
+    "id": 12,
+    "url": "http://localhost:4000/welcome-to-jekyll/",
     "title": "Welcome to my Blog",
     "body": "2019/01/21 - Welcome to my Blog. I will be sharing tech posts related to Cloud computing, AI and competent programming. My interests include Yoga, Online Gaming especially Dota, travelling and Hiking. A recent geeky hobby of me is to fly Drones. Check out my github-repo for projects that I am actively contributing to. For questions/queries ping me on any blog post "
     }, {
-    "id": 12,
-    "url": "http://localhost:4000/mundana-theme-jekyll/Invention-is-the-a-tangent-of-mundane/",
+    "id": 13,
+    "url": "http://localhost:4000/Invention-is-the-a-tangent-of-mundane/",
     "title": "Invention is a tangent of normal",
     "body": "2019/01/20 - I always wondered about the inefficient CPU workloads when i worked as Database administrator back in 2012. Cloud computing was starting it’s advent at then. Fast forwarding to 4 years, I joined Intel, Santa Clara in the Cloud division. I was part of a Open Source Integration team collaborating with rackspace where i realized the true potential of Cloud computing. My experience with OpenStack, a open source cloud computing platform answered the very first question on pushing the CPU limits to the best. Huge deployments with high availability made me realize how the down time of an application can be literally zero. Fascinatingly Google’s kubernetes pushed the technology to the next level by using containers as workloads versus the OpenStack’s Virtual machines. And today with the serverless architecture such as knative and AWS lamba, i look up, wait, think and imagine what could be next…. "
     }, {
-    "id": 13,
-    "url": "http://localhost:4000/mundana-theme-jekyll/sdn/",
-    "title": "Software Defined Networking",
-    "body": "2019/01/19 - Software Defined Networking Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale. I drove the effort to enable the Quality of Service feature in Opendaylight. This required integration between OpenStack which typically is user facing and the downstream OpenDaylight which would work behind the scene to configure underlying switches. Opendaylight has a plugin architecture so that it could support various upstream projects other than openstack and downstream projects where network vendors could develop plugins specfic to their hardware. The control plane is typically an application which would expose APIs to receive the request and interpret the data to generate the switch configuration and apply it on target switches. OpenDaylight has been a confluence of network enthusiasts from top network vendors and Cloud Providers. It was a good to learn and contribute. "
-    }, {
     "id": 14,
-    "url": "http://localhost:4000/mundana-theme-jekyll/Build-your-microservice/",
+    "url": "http://localhost:4000/sdn/",
+    "title": "Software Defined Networking",
+    "body": "2019/01/19 - Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale. I drove the effort to enable the Quality of Service feature in Opendaylight. This required integration between OpenStack which typically is user facing and the downstream OpenDaylight which would work behind the scene to configure underlying switches. Opendaylight has a plugin architecture so that it could support various upstream projects other than openstack and downstream projects where network vendors could develop plugins specfic to their hardware. The control plane is typically an application which would expose APIs to receive the request and interpret the data to generate the switch configuration and apply it on target switches. OpenDaylight has been a confluence of network enthusiasts from top network vendors and Cloud Providers. It was a good to learn and contribute. "
+    }, {
+    "id": 15,
+    "url": "http://localhost:4000/Build-your-microservice/",
     "title": "Let's GO and buid the microservice?",
     "body": "2018/11/16 - "
     }];
@@ -237,14 +245,14 @@ function lunr_search(term) {
 					<p class="text-uppercase font-weight-bold">
                         <span class="catlist">
 						
-                          <a class="sscroll text-danger" href="/mundana-theme-jekyll/categories.html#sdn">sdn</a><span class="sep">, </span>
+                          <a class="sscroll text-danger" href="/categories.html#sdn">sdn</a><span class="sep">, </span>
                         
                         </span>
 					</p>
 					<h1 class="display-4 mb-4 article-headline">Software Defined Networking</h1>
 					<div class="d-flex align-items-center">
                         
-                        <img class="rounded-circle" src="/mundana-theme-jekyll//assets/images/avatar1.jpg" alt="pramod" width="70"/>
+                        <img class="rounded-circle" src="//assets/images/avatar1.jpg" alt="pramod" width="70"/>
                         
 						<small class="ml-3"> pramod <span><a target="_blank" href="https://www.instagram.com/ajna_transcendent" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                             <span class="text-muted d-block mt-1">Jan 19, 2019 · <span class="reading-time">
@@ -259,7 +267,7 @@ function lunr_search(term) {
 				</div>
                 
 				<div class="col-md-6 pr-0 align-self-center">
-					<img class="rounded" src="/mundana-theme-jekyll/assets/images/sdn.jpg" alt="Software Defined Networking">
+					<img class="rounded" src="/assets/images/sdn.jpg" alt="Software Defined Networking">
 				</div>
                 
 			</div>
@@ -299,9 +307,7 @@ function lunr_search(term) {
             
             <!-- Article -->
 			<article class="article-post">                
-			<p>Software Defined Networking</p>
-
-<p>Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called <a href="https://www.opendaylight.org/">OpenDaylight</a>. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale.</p>
+			<p>Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called <a href="https://www.opendaylight.org/">OpenDaylight</a>. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale.</p>
 
 <p>I drove the effort to enable the <a href="https://git.opendaylight.org/gerrit/c/neutron/+/60170">Quality of Service</a> feature in Opendaylight. This required integration between OpenStack which typically is user facing and the downstream OpenDaylight which would work behind the scene to configure underlying switches. Opendaylight has a plugin architecture so that it could support various upstream projects other than openstack and downstream projects where network vendors could develop plugins specfic to their hardware. The control plane is typically an application which would expose APIs to receive the request and interpret the data to generate the switch configuration and apply it on target switches. OpenDaylight has been a confluence of network enthusiasts from top network vendors and Cloud Providers. It was a good to learn and <a href="https://git.opendaylight.org/gerrit/q/owner:pramod.raghavendra.jayathirth%2540intel.com">contribute</a>.</p>
 
@@ -312,7 +318,7 @@ function lunr_search(term) {
 			<div class="mb-4">
 				<span class="taglist">
 				
-				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/mundana-theme-jekyll/tags.html#featured">featured</a>
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tags.html#featured">featured</a>
 				
 				</span>
 			</div>
@@ -323,7 +329,7 @@ function lunr_search(term) {
 				<div class="row mt-5">
 					<div class="col-md-2 align-self-center">
                          
-                        <img class="rounded-circle" src="/mundana-theme-jekyll//assets/images/avatar1.jpg" alt="pramod" width="90"/>
+                        <img class="rounded-circle" src="//assets/images/avatar1.jpg" alt="pramod" width="90"/>
                          
 					</div>
 					<div class="col-md-10">		
@@ -368,12 +374,12 @@ function lunr_search(term) {
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/mundana-theme-jekyll/Build-your-microservice/"> <img height="30px" class="mr-1" src="/mundana-theme-jekyll/assets/images/1.jpg">  Let's GO and buid the microservice?</a>
+                <a class="text-dark" href="/Build-your-microservice/"> <img height="30px" class="mr-1" src="/assets/images/1.jpg">  Let's GO and buid the microservice?</a>
             </div>
           
           
             <div class="col-md-6 text-right pr-0">
-                <a class="text-dark" href="/mundana-theme-jekyll/Invention-is-the-a-tangent-of-mundane/"> Invention is a tangent of normal  <img height="30px" class="ml-1" src="/mundana-theme-jekyll/assets/images/invention.jpg"> </a>
+                <a class="text-dark" href="/Invention-is-the-a-tangent-of-mundane/"> Invention is a tangent of normal  <img height="30px" class="ml-1" src="/assets/images/invention.jpg"> </a>
             </div>
           
         </div>
@@ -388,7 +394,7 @@ function lunr_search(term) {
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-    <script src="/mundana-theme-jekyll/assets/js/theme.js"></script>
+    <script src="/assets/js/theme.js"></script>
 
 
     <!-- Footer -->
