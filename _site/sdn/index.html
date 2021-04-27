@@ -146,28 +146,33 @@ var documents = [{
     "body": "2021/04/26 - The channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&lt;-) Channels are associated with a data type which determines what it can transport. The channel cannot transport any other type of data. A channel must be created before it is used ch := make(chan int)This channel sends and receives the block with the int data type till the other end is ready Sending and Receiving: Write into a channela &lt;- dataRead from a channeldata := &lt;- aThe transmitting operations such as sending and receiving to a channel are blocking by default. This means that when the data is sent into a channel the control is blocked till a goroutine reads from the other end of the channel. Similarly the read from the channel is blocked till the other end has a gorouting writing data into it Example code: Here is an example code which distributes a mathematical work between two go routines. We can see that the final result is calculated once both the goroutines have completed the calculation/computation package mainimport  fmt func add(s []int, ch chan int) {	add := 0	for _, v := range s {		add += v	}	ch &lt;- add // send add to c}func main() {	p := []int{4,0,8,5,-1,1,7}	d := make(chan int)	go add(p[:len(p)/2], d)	go add(p[len(p)/2:], d)	x, y := &lt;-d, &lt;-d // receive from c	fmt. Println(x, y, x+y)}"
     }, {
     "id": 11,
+    "url": "http://localhost:4000/What-is-often-not-discussed-in-security/",
+    "title": "What is often not discussed in Security",
+    "body": "2020/11/17 - While designing a system that is optimal for your application, one would probably prioritize and emphasize on the cool features, modern platforms, scalability and resiliency. While the security aspect may be considered as a second priority, it would be good to understand it at a deeper level and best pratices in industry. Often unheard but extremely important terminology in security is “Hardware Security Module”. Hardware Security Module(HSM) are often specialized hardware devices that can store, protect and manage the digital keys. They are capable of handling encryption, decryption, authentication, signature functions such as signing certificates and a lot of other cryptographic funtions. We will find that HSMs are deployed in all the corporate and Banking sectors which have multiple applications running in a data center. The application will request HSMs for keys while initializing, signing data or for certificates. The secure feature of HSM is that the keys(private keys) that are stored in it will never ever be exposed to the outside world. An application can only send a request for the data to be signed but will never get its hands on the private key. This is usually done with a parameter called “handle”. The keys are tamper proof as well. For example, if there is a visible sign of tampering, the HSM would delete that specific key rather than exposing it outside or perform any related operation. How cool is that? My experience in integrating a Hardware Security Module(TPM) into the Cloud has led me to question and investigate the security aspect everytime I work on a new project. I would probably spend an entire day in discussion when a developer says that the secrets and keys are on test/development server. Checkout my work here on Trusted Platform Module HSM "
+    }, {
+    "id": 12,
     "url": "http://localhost:4000/Why-Service-Mesh/",
     "title": "Why would we need a service mesh?",
     "body": "2020/01/20 - Service Mesh is typically an infrastructure layer to secure, manage and connect your Microservices. Well. . Well. . Why would we even need an infra layer on top of an awesome infra layer? Like k8s. . Though kubernetes offers excellent way to deploy, manage and scale you applications and microservices, it still needs to be secured. Though one can imagine the security to be handled at the API gateway and external load balancer level, the need arises when the communication takes places between the microservices inside the cluster. How would a traffic be fine grained to a specific pod of a microservice for your sticky session?How would the mTLS be established between the micorservices running within your cluster?Is it possible to introduce your testing code to your existing running prod instances without an outage? All the above questions and more can be solved using a Servicemesh. Kubernetes is aimed to ease the job of a application developer. Wouldn’t a developer want to offload the Security, Traffic and network responsibility to someone else? "
     }, {
-    "id": 12,
+    "id": 13,
     "url": "http://localhost:4000/welcome-to-jekyll/",
     "title": "Welcome to my Blog",
-    "body": "2019/01/21 - Welcome to my Blog. I will be sharing tech posts related to Cloud computing, AI and competent programming. My interests include Yoga, Online Gaming especially Dota, travelling and Hiking. A recent geeky hobby of me is to fly Drones. Check out my github-repo for projects that I am actively contributing to. For questions/queries ping me on any blog post "
+    "body": "2019/01/21 - Welcome to my Blog. I will be sharing tech posts related to Cloud computing, AI and competent programming. My interests include Yoga, Online Gaming especially Dota, travelling and Hiking. A recent geeky hobby of me is to fly Drones. I am a Software Engineer at vmware working on modern application and service mesh platforms. I am an active upstream contributor of Istio, envoy and Kubernetes. I had previously worked at Intel’s cloud Division with focus on OpenStack, OpenDaylight and OpenvSwitch. Prior to that I was a Oracle Developer and Adminsitrator at Capgemini. The core area of my interest and Passion is in Networking, Distributed Systems and recently Artificial intelligence. There is not a moment I would design a software without thinking about resiliency, network unavailability and data accessibility. I have a master’s degree in Electrical Engineering from San Jose State University with area of interest in Software Defined Networking. Check out my github-repo for projects that I am actively contributing to. For questions/queries ping me on any blog post "
     }, {
-    "id": 13,
+    "id": 14,
     "url": "http://localhost:4000/Invention-is-the-a-tangent-of-mundane/",
     "title": "Invention is a tangent of normal",
     "body": "2019/01/20 - I always wondered about the inefficient CPU workloads when i worked as Database administrator back in 2012. Cloud computing was starting it’s advent at then. Fast forwarding to 4 years, I joined Intel, Santa Clara in the Cloud division. I was part of a Open Source Integration team collaborating with rackspace where i realized the true potential of Cloud computing. My experience with OpenStack, a open source cloud computing platform answered the very first question on pushing the CPU limits to the best. Huge deployments with high availability made me realize how the down time of an application can be literally zero. Fascinatingly Google’s kubernetes pushed the technology to the next level by using containers as workloads versus the OpenStack’s Virtual machines. And today with the serverless architecture such as knative and AWS lamba, i look up, wait, think and imagine what could be next…. "
     }, {
-    "id": 14,
+    "id": 15,
     "url": "http://localhost:4000/sdn/",
     "title": "Software Defined Networking",
     "body": "2019/01/19 - Software Defined Networking(SDN) architecture grew substantially as a core part of the Cloud computing. My experience on SDN has been in the early days of a popular open source project called OpenDaylight. As compared to the conventional computer networking, the SDN is fascinating in the way that thousands of virtual swtiches can be programmed dynamically on demand with a centralized controller. The control plane is an application which will generate and apply the configuration on the virtual switches like OpenvSwitch on scale. I drove the effort to enable the Quality of Service feature in Opendaylight. This required integration between OpenStack which typically is user facing and the downstream OpenDaylight which would work behind the scene to configure underlying switches. Opendaylight has a plugin architecture so that it could support various upstream projects other than openstack and downstream projects where network vendors could develop plugins specfic to their hardware. The control plane is typically an application which would expose APIs to receive the request and interpret the data to generate the switch configuration and apply it on target switches. OpenDaylight has been a confluence of network enthusiasts from top network vendors and Cloud Providers. It was a good to learn and contribute. "
     }, {
-    "id": 15,
+    "id": 16,
     "url": "http://localhost:4000/Build-your-microservice/",
-    "title": "Let's GO and buid the microservice?",
+    "title": "Let's GO and build the microservice?",
     "body": "2018/11/16 - "
     }];
 
@@ -252,7 +257,7 @@ function lunr_search(term) {
 					<h1 class="display-4 mb-4 article-headline">Software Defined Networking</h1>
 					<div class="d-flex align-items-center">
                         
-                        <img class="rounded-circle" src="//assets/images/avatar1.jpg" alt="pramod" width="70"/>
+                        <img class="rounded-circle" src="/assets/images/pramod.jpg" alt="pramod" width="70"/>
                         
 						<small class="ml-3"> pramod <span><a target="_blank" href="https://www.instagram.com/ajna_transcendent" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
                             <span class="text-muted d-block mt-1">Jan 19, 2019 · <span class="reading-time">
@@ -314,6 +319,11 @@ function lunr_search(term) {
                 
 			</article>
 			
+			
+			  
+
+			
+			
 			<!-- Tags -->
 			<div class="mb-4">
 				<span class="taglist">
@@ -329,36 +339,20 @@ function lunr_search(term) {
 				<div class="row mt-5">
 					<div class="col-md-2 align-self-center">
                          
-                        <img class="rounded-circle" src="//assets/images/avatar1.jpg" alt="pramod" width="90"/>
+                        <img class="rounded-circle" src="/assets/images/pramod.jpg" alt="pramod" width="90"/>
                          
 					</div>
 					<div class="col-md-10">		
                         <h5 class="font-weight-bold">Written by pramod <span><a target="_blank" href="https://www.instagram.com/ajna_transcendent" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span></h5>
-						I am a Software Engineer at vmware working on modern application and service mesh platforms. I am an active upstream contributor of Istio, envoy and Kubernetes. I had previously worked at Intel's cloud Division with focus on OpenStack, OpenDaylight and OpenvSwitch. Prior to that I was a Oracle Developer and Adminsitrator at Capgemini. The core area of my interest and Passion is in Networking, Distributed Systems and recently Artificial intelligence. There is not a moment I would design a software without thinking about resiliency, network unavailability and data accessibility. I have a master's degree in Electrical Engineering from San Jose State University with area of interest in Software Defined Networking.					
+						Software Engineer					
 					</div>
 				</div>				
                 
             
             <!-- Comments -->
             
-                <!--  Don't edit anything here. Set your disqus id in _config.yml -->
+                
 
-<div id="comments" class="mt-5">
-    <div id="disqus_thread">
-    </div>
-    <script type="text/javascript">
-        var disqus_shortname = 'blogwebsite'; 
-        var disqus_developer = 0;
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = window.location.protocol + '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>
-    Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-</div>
             
             
 		</div>
@@ -374,7 +368,7 @@ function lunr_search(term) {
         <div class="row prevnextlinks small font-weight-bold">
           
             <div class="col-md-6 rightborder pl-0">
-                <a class="text-dark" href="/Build-your-microservice/"> <img height="30px" class="mr-1" src="/assets/images/1.jpg">  Let's GO and buid the microservice?</a>
+                <a class="text-dark" href="/Build-your-microservice/"> <img height="30px" class="mr-1" src="/assets/images/microservice.jpg">  Let's GO and build the microservice?</a>
             </div>
           
           

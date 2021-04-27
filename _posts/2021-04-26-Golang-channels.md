@@ -3,7 +3,7 @@ layout: post
 title:  "What are Go channels?"
 author: pramod
 categories: [ go-tutorial, programming ]
-image: assets/images/servicemesh.jpg
+image: assets/images/gochannels.jpg
 tags: featured
 ---
 
@@ -59,3 +59,5 @@ func main() {
 	fmt.Println(x, y, x+y)
 }
 ```
+
+Image courtesy - https://golangforall.com/en/tag/channels.html
