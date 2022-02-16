@@ -1,4 +1,4 @@
-## Welcome to the Blog
+## Welcome to my Blog
 
-Inspired by Jekyll Theme - Mundana by WowThemes.net
+
  
