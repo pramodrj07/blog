@@ -4,24 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>About | Pramod Raghavendra Jayathirth</title>
+    <title>Leader Election in a kubernetes service | Pramod Raghavendra Jayathirth</title>
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>About | Pramod Raghavendra Jayathirth</title>
+<title>Leader Election in a kubernetes service | Pramod Raghavendra Jayathirth</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="About" />
+<meta property="og:title" content="Leader Election in a kubernetes service" />
+<meta name="author" content="pramod" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Welcome to my Blog!!" />
-<meta property="og:description" content="Welcome to my Blog!!" />
-<link rel="canonical" href="http://localhost:4000/about.html" />
-<meta property="og:url" content="http://localhost:4000/about.html" />
+<meta name="description" content="Electing a Leader Using Controller-runtime in Kubernetes" />
+<meta property="og:description" content="Electing a Leader Using Controller-runtime in Kubernetes" />
+<link rel="canonical" href="http://localhost:4000/Leader-Election-in-k8s/" />
+<meta property="og:url" content="http://localhost:4000/Leader-Election-in-k8s/" />
 <meta property="og:site_name" content="Pramod Raghavendra Jayathirth" />
-<meta property="og:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
+<meta property="og:image" content="http://localhost:4000/assets/images/leader-election.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-04T00:00:00-07:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/assets/images/screenshot.jpg" />
-<meta property="twitter:title" content="About" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/leader-election.jpg" />
+<meta property="twitter:title" content="Leader Election in a kubernetes service" />
 <script type="application/ld+json">
-{"@type":"WebPage","image":"http://localhost:4000/assets/images/screenshot.jpg","headline":"About","url":"http://localhost:4000/about.html","description":"Welcome to my Blog!!","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"}},"@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","image":"http://localhost:4000/assets/images/leader-election.jpg","headline":"Leader Election in a kubernetes service","dateModified":"2023-08-04T00:00:00-07:00","datePublished":"2023-08-04T00:00:00-07:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Leader-Election-in-k8s/"},"url":"http://localhost:4000/Leader-Election-in-k8s/","author":{"@type":"Person","name":"pramod"},"description":"Electing a Leader Using Controller-runtime in Kubernetes","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/images/logo.png"},"name":"pramod"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -243,34 +246,229 @@ function lunr_search(term) {
 
     <!-- Content -->
     <main role="main" class="site-content">
-        <div class="container">
-<h3 class="font-weight-bold spanborder"><span>About</span></h3>
-<div class="row">
-    <div class="col-md-8">
-     
-    <img class="card-img-top mb-5 shadow-lg" src="http://localhost:4000/assets/images/screenshot.jpg" alt="About"> 
-     
-    <div class="page-content">
-        <p>Made with <i class="fa fa-heart text-danger"></i> by Sal <a href="https://www.wowthemes.net/category/free-themes-templates/">@wowthemesnet</a>.</p>
-
-        <!-- Comments -->
         
-        
-
-        
-    </div>
-    </div>
-    <div class="col-md-4">
-        <h5 class="mb-3">Mundana Jekyll Theme</h5>
-
-<p>Hi! The website you are previewing is a demonstration for Mundana Jekyll theme, hosted on Github, made by <a href="https://www.wowthemes.net/donate/">Sal</a>.</p>
-
-<a target="_blank" href="https://www.wowthemes.net/mundana-jekyll-theme/" class="btn btn-warning d-block mb-2"><i class="fa fa-file"></i> Documentation</a>
-
-<a target="_blank" class="btn btn-danger d-block" href="https://www.wowthemes.net/donate/"><i class="fa fa-coffee"></i> Buy me a coffee</a> 
-    </div>
-</div>  
+<div class="container">
+<div class="jumbotron jumbotron-fluid mb-3 pl-0 pt-0 pb-0 bg-white position-relative">
+		<div class="h-100 tofront">
+			<div class="row  justify-content-between ">
+				<div class=" col-md-6  pr-0 pr-md-4 pt-4 pb-4 align-self-center">
+					<p class="text-uppercase font-weight-bold">
+                        <span class="catlist">
+						
+                          <a class="sscroll text-danger" href="/categories.html#cloud">cloud</a><span class="sep">, </span>
+                        
+                        </span>
+					</p>
+					<h1 class="display-4 mb-4 article-headline">Leader Election in a kubernetes service</h1>
+					<div class="d-flex align-items-center">
+                        
+                        <img class="rounded-circle" src="/assets/images/pramod.jpg" alt="pramod" width="70"/>
+                        
+						<small class="ml-3"> pramod <span><a target="_blank" href="https://www.instagram.com/ajna_transcendent" class="btn btn-outline-success btn-sm btn-round ml-1">Follow</a></span>
+                            <span class="text-muted d-block mt-1">Aug 04, 2023 · <span class="reading-time">
+  
+  
+    3 mins read
+  
+</span>
+    </span>
+						</small>
+					</div>
+				</div>
+                
+				<div class="col-md-6 pr-0 align-self-center">
+					<img class="rounded" src="/assets/images/leader-election.jpg" alt="Leader Election in a kubernetes service">
+				</div>
+                
+			</div>
+		</div>
+	</div>
 </div>
+
+
+
+
+
+<div class="container-lg pt-4 pb-4">
+	<div class="row justify-content-center">
+        
+        
+        <!-- Share -->
+		<div class="col-lg-2 pr-4 mb-4 col-md-12">
+			<div class="sticky-top sticky-top-offset text-center">
+				<div class="text-muted">
+					Share this
+				</div>
+				<div class="share d-inline-block">
+					<!-- AddToAny BEGIN -->
+					<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+						<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+						<a class="a2a_button_facebook"></a>
+						<a class="a2a_button_twitter"></a>
+					</div>
+					<script async src="https://static.addtoany.com/menu/page.js"></script>
+					<!-- AddToAny END -->
+				</div>
+			</div>
+		</div>
+        
+        
+		<div class="col-md-12 col-lg-8">
+            
+            <!-- Article -->
+			<article class="article-post">                
+			<h2 id="electing-a-leader-using-controller-runtime-in-kubernetes">Electing a Leader Using Controller-runtime in Kubernetes</h2>
+
+<p>Kubernetes is an open-source container orchestration platform that has revolutionized the way we deploy, manage, and scale containerized applications. One crucial aspect of managing applications in a Kubernetes cluster is ensuring high availability and fault tolerance. To achieve this, electing a leader among multiple instances of a controller is a common practice. In this blog post, we’ll explore how to implement leader election using the controller-runtime library in Go, making our controllers resilient and robust.</p>
+
+<p>The transmitting operations such as sending and receiving to a channel are blocking by default. This means that when the data is sent into a channel the control is blocked till a goroutine reads from the other end of the channel.
+Similarly the read from the channel is blocked till the other end has a gorouting writing data into it</p>
+
+<h2 id="why-leader-election">Why Leader Election?</h2>
+<p>In a Kubernetes environment, you might have multiple instances of a controller running to manage a set of resources. These controllers might be responsible for tasks like scaling, syncing, or managing custom resources. To prevent conflicts and ensure orderly execution, only one instance should be the leader at any given time.</p>
+
+<p>Leader election helps achieve this by designating one instance as the leader while the others remain followers. The leader performs tasks, and in the event of a failure, another instance is automatically elected as the new leader. This mechanism ensures consistent and controlled execution of operations.</p>
+
+<h2 id="using-controller-runtime-for-leader-election">Using controller-runtime for Leader Election</h2>
+<p>The controller-runtime library is a powerful toolkit for building Kubernetes controllers in Go. It provides a framework for writing efficient and scalable controllers, including built-in support for leader election.</p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before we begin, make sure you have the following prerequisites:</p>
+
+<ol>
+  <li>A working Kubernetes cluster.</li>
+  <li>Go programming language installed.</li>
+  <li>Basic familiarity with Kubernetes concepts and Go programming.</li>
+</ol>
+
+<h3 id="implementation-steps">Implementation Steps</h3>
+
+<p>Let’s implement leader election using controller-runtime step by step.</p>
+
+<h4 id="step-1-set-up-your-controller-project">Step 1: Set Up Your Controller Project</h4>
+<p>Create a new Go project and import the necessary libraries:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package main
+
+import (
+    "context"
+    "flag"
+    "os"
+
+    "sigs.k8s.io/controller-runtime/pkg/manager"
+    // Import other necessary packages
+)
+</code></pre></div></div>
+
+<h4 id="step-2-define-the-leaderelectionconfig">Step 2: Define the LeaderElectionConfig</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func main() {
+    var metricsAddr string
+    var enableLeaderElection bool
+    flag.StringVar(&amp;metricsAddr, "metrics-bind-address", ":8080", "The address the metric endpoint binds to.")
+    flag.BoolVar(&amp;enableLeaderElection, "enable-leader-election", false, "Enable leader election for controller manager. Enabling this will ensure there is only one active controller manager.")
+
+    flag.Parse()
+
+    leaderElectionID := "my-controller-lock" // Unique ID for leader election
+    // ... (initialize other components)
+
+    // Create a new controller manager with leader election configuration
+    mgr, err := manager.New(cfg, manager.Options{
+        LeaderElection:     enableLeaderElection,
+        LeaderElectionID:   leaderElectionID,
+        MetricsBindAddress: metricsAddr,
+        // ... (other options)
+    })
+    if err != nil {
+        // Handle error
+        os.Exit(1)
+    }
+
+    // ... (initialize and start controllers)
+}
+</code></pre></div></div>
+
+<h4 id="step-3-start-the-manager">Step 3: Start the Manager</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Start the manager
+	if err := mgr.Start(ctrl.SetupSignalHandler()); err != nil {
+        // Handle error
+        os.Exit(1)
+    }
+}
+</code></pre></div></div>
+
+<h4 id="step-4-test-leader-election">Step 4: Test Leader Election</h4>
+<p>Deploy your controller to the Kubernetes cluster and observe the leader election behavior. You should see only one instance of your controller acting as the leader.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Implementing leader election in Kubernetes controllers is crucial for ensuring reliable and fault-tolerant operation. By using the controller-runtime library, you can easily incorporate leader election functionality into your controllers, enhancing their resilience and availability.</p>
+
+<p>In this blog post, we’ve covered the basics of leader election using controller-runtime and provided a simple example to get you started. As you delve deeper into building Kubernetes controllers, mastering leader election will become an essential skill in maintaining the stability of your applications.</p>
+
+<p>Remember that leader election is just one piece of the puzzle in creating robust controllers. To fully harness the power of Kubernetes and controller-runtime, continue exploring the documentation and experimenting with more advanced features.</p>
+
+<p>Happy coding and happy controlling!
+Image courtesy - https://www.istockphoto.com/illustrations/voting-booth</p>
+                
+			</article>
+			
+			
+			  
+
+			
+			
+			<!-- Tags -->
+			<div class="mb-4">
+				<span class="taglist">
+				
+				  <a class="sscroll btn btn-light btn-sm font-weight-bold" href="/tags.html#featured">featured</a>
+				
+				</span>
+			</div>
+            
+            
+             <!-- Author Box -->
+                				
+				<div class="row mt-5">
+					<div class="col-md-2 align-self-center">
+                         
+                        <img class="rounded-circle" src="/assets/images/pramod.jpg" alt="pramod" width="90"/>
+                         
+					</div>
+					<div class="col-md-10">		
+                        <h5 class="font-weight-bold">Written by pramod <span><a target="_blank" href="https://www.instagram.com/ajna_transcendent" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span></h5>
+						Software Engineer					
+					</div>
+				</div>				
+                
+            
+            <!-- Comments -->
+            
+                
+
+            
+            
+		</div>
+        
+        
+	</div>
+</div>
+
+
+<!-- Aletbar Prev/Next -->
+<div class="alertbar">
+    <div class="container">
+        <div class="row prevnextlinks small font-weight-bold">
+          
+            <div class="col-md-6 rightborder pl-0">
+                <a class="text-dark" href="/Golang-channels/"> <img height="30px" class="mr-1" src="/assets/images/gochannels.jpg">  What are Go channels?</a>
+            </div>
+          
+          
+        </div>
+    </div>
+</div>
+
     </main>
 
 

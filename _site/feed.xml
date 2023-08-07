@@ -1,4 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-04-26T23:43:14-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Pramod Raghavendra Jayathirth</title><subtitle>Welcome to my Blog!!</subtitle><entry><title type="html">What are Go channels?</title><link href="http://localhost:4000/Golang-channels/" rel="alternate" type="text/html" title="What are Go channels?" /><published>2021-04-26T00:00:00-07:00</published><updated>2021-04-26T00:00:00-07:00</updated><id>http://localhost:4000/Golang-channels</id><content type="html" xml:base="http://localhost:4000/Golang-channels/">&lt;p&gt;The channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&amp;lt;-)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-07T12:31:36-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Pramod Raghavendra Jayathirth</title><subtitle>Welcome to my Blog!!</subtitle><entry><title type="html">Leader Election in a kubernetes service</title><link href="http://localhost:4000/Leader-Election-in-k8s/" rel="alternate" type="text/html" title="Leader Election in a kubernetes service" /><published>2023-08-04T00:00:00-07:00</published><updated>2023-08-04T00:00:00-07:00</updated><id>http://localhost:4000/Leader-Election-in-k8s</id><content type="html" xml:base="http://localhost:4000/Leader-Election-in-k8s/">&lt;h2 id=&quot;electing-a-leader-using-controller-runtime-in-kubernetes&quot;&gt;Electing a Leader Using Controller-runtime in Kubernetes&lt;/h2&gt;
+
+&lt;p&gt;Kubernetes is an open-source container orchestration platform that has revolutionized the way we deploy, manage, and scale containerized applications. One crucial aspect of managing applications in a Kubernetes cluster is ensuring high availability and fault tolerance. To achieve this, electing a leader among multiple instances of a controller is a common practice. In this blog post, we’ll explore how to implement leader election using the controller-runtime library in Go, making our controllers resilient and robust.&lt;/p&gt;
+
+&lt;p&gt;The transmitting operations such as sending and receiving to a channel are blocking by default. This means that when the data is sent into a channel the control is blocked till a goroutine reads from the other end of the channel.
+Similarly the read from the channel is blocked till the other end has a gorouting writing data into it&lt;/p&gt;
+
+&lt;h2 id=&quot;why-leader-election&quot;&gt;Why Leader Election?&lt;/h2&gt;
+&lt;p&gt;In a Kubernetes environment, you might have multiple instances of a controller running to manage a set of resources. These controllers might be responsible for tasks like scaling, syncing, or managing custom resources. To prevent conflicts and ensure orderly execution, only one instance should be the leader at any given time.&lt;/p&gt;
+
+&lt;p&gt;Leader election helps achieve this by designating one instance as the leader while the others remain followers. The leader performs tasks, and in the event of a failure, another instance is automatically elected as the new leader. This mechanism ensures consistent and controlled execution of operations.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-controller-runtime-for-leader-election&quot;&gt;Using controller-runtime for Leader Election&lt;/h2&gt;
+&lt;p&gt;The controller-runtime library is a powerful toolkit for building Kubernetes controllers in Go. It provides a framework for writing efficient and scalable controllers, including built-in support for leader election.&lt;/p&gt;
+
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
+&lt;p&gt;Before we begin, make sure you have the following prerequisites:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A working Kubernetes cluster.&lt;/li&gt;
+  &lt;li&gt;Go programming language installed.&lt;/li&gt;
+  &lt;li&gt;Basic familiarity with Kubernetes concepts and Go programming.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;implementation-steps&quot;&gt;Implementation Steps&lt;/h3&gt;
+
+&lt;p&gt;Let’s implement leader election using controller-runtime step by step.&lt;/p&gt;
+
+&lt;h4 id=&quot;step-1-set-up-your-controller-project&quot;&gt;Step 1: Set Up Your Controller Project&lt;/h4&gt;
+&lt;p&gt;Create a new Go project and import the necessary libraries:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package main
+
+import (
+    &quot;context&quot;
+    &quot;flag&quot;
+    &quot;os&quot;
+
+    &quot;sigs.k8s.io/controller-runtime/pkg/manager&quot;
+    // Import other necessary packages
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-2-define-the-leaderelectionconfig&quot;&gt;Step 2: Define the LeaderElectionConfig&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func main() {
+    var metricsAddr string
+    var enableLeaderElection bool
+    flag.StringVar(&amp;amp;metricsAddr, &quot;metrics-bind-address&quot;, &quot;:8080&quot;, &quot;The address the metric endpoint binds to.&quot;)
+    flag.BoolVar(&amp;amp;enableLeaderElection, &quot;enable-leader-election&quot;, false, &quot;Enable leader election for controller manager. Enabling this will ensure there is only one active controller manager.&quot;)
+
+    flag.Parse()
+
+    leaderElectionID := &quot;my-controller-lock&quot; // Unique ID for leader election
+    // ... (initialize other components)
+
+    // Create a new controller manager with leader election configuration
+    mgr, err := manager.New(cfg, manager.Options{
+        LeaderElection:     enableLeaderElection,
+        LeaderElectionID:   leaderElectionID,
+        MetricsBindAddress: metricsAddr,
+        // ... (other options)
+    })
+    if err != nil {
+        // Handle error
+        os.Exit(1)
+    }
+
+    // ... (initialize and start controllers)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-3-start-the-manager&quot;&gt;Step 3: Start the Manager&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Start the manager
+	if err := mgr.Start(ctrl.SetupSignalHandler()); err != nil {
+        // Handle error
+        os.Exit(1)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;step-4-test-leader-election&quot;&gt;Step 4: Test Leader Election&lt;/h4&gt;
+&lt;p&gt;Deploy your controller to the Kubernetes cluster and observe the leader election behavior. You should see only one instance of your controller acting as the leader.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Implementing leader election in Kubernetes controllers is crucial for ensuring reliable and fault-tolerant operation. By using the controller-runtime library, you can easily incorporate leader election functionality into your controllers, enhancing their resilience and availability.&lt;/p&gt;
+
+&lt;p&gt;In this blog post, we’ve covered the basics of leader election using controller-runtime and provided a simple example to get you started. As you delve deeper into building Kubernetes controllers, mastering leader election will become an essential skill in maintaining the stability of your applications.&lt;/p&gt;
+
+&lt;p&gt;Remember that leader election is just one piece of the puzzle in creating robust controllers. To fully harness the power of Kubernetes and controller-runtime, continue exploring the documentation and experimenting with more advanced features.&lt;/p&gt;
+
+&lt;p&gt;Happy coding and happy controlling!
+Image courtesy - https://www.istockphoto.com/illustrations/voting-booth&lt;/p&gt;</content><author><name>pramod</name></author><category term="cloud" /><category term="featured" /><summary type="html">Electing a Leader Using Controller-runtime in Kubernetes</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/leader-election.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/leader-election.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What are Go channels?</title><link href="http://localhost:4000/Golang-channels/" rel="alternate" type="text/html" title="What are Go channels?" /><published>2021-04-26T00:00:00-07:00</published><updated>2021-04-26T00:00:00-07:00</updated><id>http://localhost:4000/Golang-channels</id><content type="html" xml:base="http://localhost:4000/Golang-channels/">&lt;p&gt;Channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&amp;lt;-)&lt;/p&gt;
 
 &lt;p&gt;Channels are associated with a data type which determines what it can transport. The channel cannot transport any other type of data.&lt;/p&gt;
 
@@ -47,7 +138,7 @@ func main() {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Image courtesy - https://golangforall.com/en/tag/channels.html&lt;/p&gt;</content><author><name>pramod</name></author><category term="go-tutorial" /><category term="programming" /><category term="featured" /><summary type="html">The channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&amp;lt;-)</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/gochannels.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/gochannels.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What is often not discussed in Security</title><link href="http://localhost:4000/What-is-often-not-discussed-in-security/" rel="alternate" type="text/html" title="What is often not discussed in Security" /><published>2020-11-17T00:00:00-08:00</published><updated>2020-11-17T00:00:00-08:00</updated><id>http://localhost:4000/What-is-often-not-discussed-in-security</id><content type="html" xml:base="http://localhost:4000/What-is-often-not-discussed-in-security/">&lt;p&gt;While designing a system that is optimal for your application, one would probably prioritize and emphasize on the cool features, modern platforms, scalability and resiliency. While the security aspect may be considered as a second priority, it would be good to understand it at a deeper level and best pratices in industry.&lt;/p&gt;
+&lt;p&gt;Image courtesy - https://golangforall.com/en/tag/channels.html&lt;/p&gt;</content><author><name>pramod</name></author><category term="go-tutorial" /><category term="programming" /><category term="featured" /><summary type="html">Channels in golang are communication lines between the Goroutines. It can be biredctional as we can send and receive with the channel operator (&amp;lt;-)</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/gochannels.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/gochannels.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What is often not discussed in Security</title><link href="http://localhost:4000/What-is-often-not-discussed-in-security/" rel="alternate" type="text/html" title="What is often not discussed in Security" /><published>2020-11-17T00:00:00-08:00</published><updated>2020-11-17T00:00:00-08:00</updated><id>http://localhost:4000/What-is-often-not-discussed-in-security</id><content type="html" xml:base="http://localhost:4000/What-is-often-not-discussed-in-security/">&lt;p&gt;While designing a system that is optimal for your application, one would probably prioritize and emphasize on the cool features, modern platforms, scalability and resiliency. While the security aspect may be considered as a second priority, it would be good to understand it at a deeper level and best pratices in industry.&lt;/p&gt;
 
 &lt;p&gt;Often unheard but extremely important terminology in security is “Hardware Security Module”. Hardware Security Module(HSM) are often specialized hardware devices that can store, protect and manage the digital keys. They are capable of handling encryption, decryption, authentication, signature functions such as signing certificates and a lot of other cryptographic funtions.&lt;/p&gt;
 
